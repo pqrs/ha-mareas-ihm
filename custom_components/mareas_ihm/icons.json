@@ -1,0 +1,21 @@
+{
+  "entity": {
+    "sensor": {
+      "mareas_hoy": { "default": "mdi:waves" },
+      "mareas_mes": { "default": "mdi:calendar-month" },
+      "altura_actual": { "default": "mdi:wave" },
+      "tendencia": {
+        "default": "mdi:swap-vertical",
+        "state": {
+          "subiendo": "mdi:arrow-up-bold",
+          "bajando": "mdi:arrow-down-bold"
+        }
+      },
+      "proxima_pleamar": { "default": "mdi:arrow-collapse-up" },
+      "proxima_bajamar": { "default": "mdi:arrow-collapse-down" }
+    }
+  },
+  "services": {
+    "consultar_mareas": { "service": "mdi:calendar-search" }
+  }
+}

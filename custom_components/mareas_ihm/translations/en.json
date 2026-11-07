@@ -1,0 +1,107 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Choose a port",
+        "description": "Tide predictions from the Spanish Navy Hydrographic Institute (IHM).",
+        "data": {
+          "puerto_id": "Port"
+        },
+        "data_description": {
+          "puerto_id": "You can add more ports later by adding the integration again."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the IHM API.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This port is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tide options",
+        "data": {
+          "paso_curva": "Daily chart resolution",
+          "mostrar_mes": "Create the monthly tides sensor"
+        },
+        "data_description": {
+          "paso_curva": "Minutes between points of the daily tide curve.",
+          "mostrar_mes": "Needed for the monthly view of the card."
+        }
+      }
+    }
+  },
+  "selector": {
+    "paso_curva": {
+      "options": {
+        "5": "5 min",
+        "10": "10 min",
+        "15": "15 min",
+        "30": "30 min",
+        "60": "60 min"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "mareas_hoy": {
+        "name": "Tides today"
+      },
+      "mareas_mes": {
+        "name": "Tides this month"
+      },
+      "altura_actual": {
+        "name": "Current height"
+      },
+      "tendencia": {
+        "name": "Trend",
+        "state": {
+          "subiendo": "Rising",
+          "bajando": "Falling"
+        }
+      },
+      "proxima_pleamar": {
+        "name": "Next high tide"
+      },
+      "proxima_bajamar": {
+        "name": "Next low tide"
+      }
+    }
+  },
+  "exceptions": {
+    "sin_datos": {
+      "message": "The IHM has no data for that date (only the current year is available)."
+    },
+    "error_api": {
+      "message": "Error querying the IHM API: {error}"
+    }
+  },
+  "services": {
+    "consultar_mareas": {
+      "name": "Query tides",
+      "description": "Gets the high and low tides of a day or month for a port.",
+      "fields": {
+        "puerto_id": {
+          "name": "Port ID",
+          "description": "IHM port identifier (attribute puerto_id of the sensors)."
+        },
+        "fecha": {
+          "name": "Date",
+          "description": "Day to query. Defaults to today."
+        },
+        "mes": {
+          "name": "Month",
+          "description": "Month to query in YYYY-MM format. Do not combine with date."
+        },
+        "paso_curva": {
+          "name": "Curve resolution",
+          "description": "Minutes between points of the daily curve."
+        }
+      }
+    }
+  }
+}

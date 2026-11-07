@@ -1,0 +1,13 @@
+{
+  "domain": "mareas_ihm",
+  "name": "Mareas IHM",
+  "codeowners": ["@pqrs"],
+  "config_flow": true,
+  "dependencies": ["frontend", "http"],
+  "documentation": "https://github.com/pqrs/ha-mareas-ihm",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/pqrs/ha-mareas-ihm/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

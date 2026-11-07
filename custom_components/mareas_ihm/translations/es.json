@@ -1,0 +1,107 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Elige un puerto",
+        "description": "Predicciones de marea del Instituto Hidrográfico de la Marina (IHM).",
+        "data": {
+          "puerto_id": "Puerto"
+        },
+        "data_description": {
+          "puerto_id": "Puedes añadir más puertos después añadiendo de nuevo la integración."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No se pudo conectar con la API del IHM.",
+      "unknown": "Error inesperado."
+    },
+    "abort": {
+      "already_configured": "Este puerto ya está configurado."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones de mareas",
+        "data": {
+          "paso_curva": "Resolución del gráfico diario",
+          "mostrar_mes": "Crear el sensor de mareas del mes"
+        },
+        "data_description": {
+          "paso_curva": "Minutos entre puntos de la curva de marea del día.",
+          "mostrar_mes": "Necesario para la vista mensual de la tarjeta."
+        }
+      }
+    }
+  },
+  "selector": {
+    "paso_curva": {
+      "options": {
+        "5": "5 min",
+        "10": "10 min",
+        "15": "15 min",
+        "30": "30 min",
+        "60": "60 min"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "mareas_hoy": {
+        "name": "Mareas de hoy"
+      },
+      "mareas_mes": {
+        "name": "Mareas del mes"
+      },
+      "altura_actual": {
+        "name": "Altura actual"
+      },
+      "tendencia": {
+        "name": "Tendencia",
+        "state": {
+          "subiendo": "Subiendo",
+          "bajando": "Bajando"
+        }
+      },
+      "proxima_pleamar": {
+        "name": "Próxima pleamar"
+      },
+      "proxima_bajamar": {
+        "name": "Próxima bajamar"
+      }
+    }
+  },
+  "exceptions": {
+    "sin_datos": {
+      "message": "El IHM no tiene datos para esa fecha (solo hay datos del año en curso)."
+    },
+    "error_api": {
+      "message": "Error consultando la API del IHM: {error}"
+    }
+  },
+  "services": {
+    "consultar_mareas": {
+      "name": "Consultar mareas",
+      "description": "Obtiene las pleamares y bajamares de un día o de un mes para un puerto.",
+      "fields": {
+        "puerto_id": {
+          "name": "ID del puerto",
+          "description": "Identificador IHM del puerto (atributo puerto_id de los sensores)."
+        },
+        "fecha": {
+          "name": "Fecha",
+          "description": "Día a consultar. Por defecto, hoy."
+        },
+        "mes": {
+          "name": "Mes",
+          "description": "Mes a consultar con formato AAAA-MM. No combinar con fecha."
+        },
+        "paso_curva": {
+          "name": "Resolución de la curva",
+          "description": "Minutos entre puntos de la curva diaria."
+        }
+      }
+    }
+  }
+}

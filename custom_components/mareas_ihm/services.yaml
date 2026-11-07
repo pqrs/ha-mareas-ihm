@@ -1,0 +1,23 @@
+consultar_mareas:
+  fields:
+    puerto_id:
+      required: true
+      example: "42"
+      selector:
+        text:
+    fecha:
+      example: "2026-11-25"
+      selector:
+        date:
+    mes:
+      example: "2026-12"
+      selector:
+        text:
+    paso_curva:
+      default: 10
+      selector:
+        number:
+          min: 5
+          max: 60
+          step: 5
+          unit_of_measurement: min

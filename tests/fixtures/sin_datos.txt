@@ -1,0 +1,34 @@
+No existen datos para esa fecha
+#################
+
+
+API para obtención de predicciones de marea en los puertos del Reino de España
+url: http://ideihm.covam.es/api-ihm/getmarea?
+
+REQUEST=GetList - obtiene una lista de los puertos en los que existe predicción de marea
+	FORMAT=XML,JSON o TXT - (opcional) por defecto texto plano, TXT
+	ejemplos:	http://ideihm.covam.es/api-ihm/getmarea?request=getlist
+			http://ideihm.covam.es/api-ihm/getmarea?request=getlist&format=xml
+			http://ideihm.covam.es/api-ihm/getmarea?request=getlist&format=json
+
+REQUEST=GetTide - obtiene la marea en el puerto indicado
+	ID=id - identificador del puerto 
+		DATE=YYYYMMDD - (opcional) día para la predicción, por defecto día actual
+		MONTH=YYYYMM - (opcional) obtiene los datos de marea para el mes indicado caso de indicarse y no indicarte DATE
+	FORMAT=XML,JSON,GRA o TXT - (opcional) por defecto texto plano, TXT, si la petición es con DATE y el formato es GRA devuelve un gráfico con la onda de marea.
+		TIME=1H,30min o 5min (opcional) si está selccionado MONTH y FORMAT=gra indica la frecuencia de predicción de datos de mareas. por defecto 1H
+	ejemplos:	http://ideihm.covam.es/api-ihm/getmarea?request=gettide&id=42&date=20261107
+			http://ideihm.covam.es/api-ihm/getmarea?request=gettide&id=42&date=20261107&format=xml
+			http://ideihm.covam.es/api-ihm/getmarea?request=gettide&id=42&date=20261107&format=json
+			http://ideihm.covam.es/api-ihm/getmarea?request=gettide&id=42&month=20261107&format=gra&time=1H
+
+REQUEST=GetTide - obtiene la marea en el puerto indicado
+	PORT=code -	nombre corto del puerto
+		DATE=YYYYMMDD - (opcional) día para la predicción, por defecto día actual
+		MONTH=YYYYMM - (opcional) obtene los datos de marea para el mes indicado caso de indicarse y no indicarte DATE
+	FORMAT=XML,JSON,GRA o TXT - (opcional) por defecto texto plano, TXT, si la petición es con DATE y el formato es GRA devuelve un gráfico con la onda de marea.
+		TIME=1H,30min o 5min (opcional) si está selccionado MONTH y FORMAT=gra indica la frecuencia de predicción de datos de mareas. por defecto 1H
+	ejemplos:	http://ideihm.covam.es/api-ihm/getmarea?request=gettide&port=cadiz&date=20261107
+			http://ideihm.covam.es/api-ihm/getmarea?request=gettide&port=cadiz&date=20261107&format=xml
+			http://ideihm.covam.es/api-ihm/getmarea?request=gettide&port=cadiz&date=20261107&format=json
+			http://ideihm.covam.es/api-ihm/getmarea?request=gettide&id=cadiz&month=20261107&format=gra&time=1H
