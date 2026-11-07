@@ -1,5 +1,7 @@
 # Mareas IHM para Home Assistant
 
+🇬🇧 [English](README.en.md)
+
 Pleamares, bajamares y altura del agua en los puertos de España, con datos
 oficiales del **Instituto Hidrográfico de la Marina (IHM)**. Incluye una
 tarjeta propia para ver las mareas del **día** o del **mes**, en **texto**,
