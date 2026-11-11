@@ -119,6 +119,14 @@ actions:
 Datos: © Instituto Hidrográfico de la Marina. Proyecto no oficial, sin
 relación con el IHM ni con la Armada.
 
+## Fallos y sugerencias
+
+Si algo no funciona o tienes una idea, abre una incidencia en
+[GitHub Issues](https://github.com/pqrs/ha-mareas-ihm/issues) indicando tu
+versión de Home Assistant, la de la integración y el puerto. Si hay errores,
+copia lo que aparece en **Ajustes → Sistema → Registros** al buscar
+`mareas_ihm`.
+
 ## Desarrollo
 
 ```bash

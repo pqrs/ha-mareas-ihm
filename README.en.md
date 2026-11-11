@@ -127,6 +127,14 @@ instead; check yours in **Settings → Devices & services → Mareas IHM**.
 Data: © Instituto Hidrográfico de la Marina. Unofficial project, not
 affiliated with the IHM or the Spanish Navy.
 
+## Bugs and suggestions
+
+If something does not work or you have an idea, open an issue on
+[GitHub Issues](https://github.com/pqrs/ha-mareas-ihm/issues) with your
+Home Assistant version, the integration version and the port. If there are
+errors, include what **Settings → System → Logs** shows when you search for
+`mareas_ihm`.
+
 ## Development
 
 ```bash
